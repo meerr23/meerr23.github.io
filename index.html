@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marsal Al Sharji // Cybersecurity Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1ecd9;--panel:#fffaf0;--ink:#1b1b2f;--dim:#55556e;--accent:#d6336c;--accent2:#8a5cd0;--accent3:#2b59c3;--line:#1b1b2f;--shadow:#1b1b2f;
+  --px:'Press Start 2P','Courier New',monospace;--mono:'VT323','Courier New',monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d0f1c;--panel:#161a30;--ink:#e8f1ff;--dim:#8f9ac0;--accent:#ff7eb8;--accent2:#b79cff;--accent3:#5ab0ff;--line:#ff7eb8;--shadow:#000}
+}
+:root[data-theme="dark"]{--bg:#0d0f1c;--panel:#161a30;--ink:#e8f1ff;--dim:#8f9ac0;--accent:#ff7eb8;--accent2:#b79cff;--accent3:#5ab0ff;--line:#ff7eb8;--shadow:#000}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:22px;line-height:1.35;
+  background-image:linear-gradient(var(--dim) 1px,transparent 1px),linear-gradient(90deg,var(--dim) 1px,transparent 1px);background-size:32px 32px;background-blend-mode:soft-light}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(transparent 0 2px,rgba(0,0,0,.06) 2px 3px)}
+a{color:var(--accent3)}
+h1,h2,h3{font-family:var(--px);font-weight:400;line-height:1.5;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:4px solid var(--line)}
+nav .wrap{display:flex;gap:6px 14px;align-items:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+nav a{font-family:var(--px);font-size:10px;color:var(--ink);text-decoration:none;padding:6px}
+nav a:hover{background:var(--accent);color:var(--bg)}
+nav .logo{margin-right:auto;color:var(--accent)}
+button{font-family:var(--px);font-size:10px;background:var(--panel);color:var(--ink);border:3px solid var(--line);padding:8px 10px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow)}
+button:active{transform:translate(3px,3px);box-shadow:none}
+section{padding:48px 0 8px}
+h2{font-size:16px;margin-bottom:22px;color:var(--accent)}
+h2::before{content:"> ";color:var(--accent2)}
+.box{background:var(--panel);border:4px solid var(--line);box-shadow:6px 6px 0 var(--shadow);padding:18px}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding-top:40px}
+.hero svg{filter:drop-shadow(1px 0 0 var(--line)) drop-shadow(-1px 0 0 var(--line)) drop-shadow(0 1px 0 var(--line)) drop-shadow(0 -1px 0 var(--line));width:150px;height:216px;image-rendering:pixelated;animation:bob 1.2s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.hero h1{font-size:clamp(16px,4.4vw,28px);margin-bottom:14px}
+.hero h1 span{color:var(--accent)}
+.term{min-height:5.4em;color:var(--accent)}
+.cursor{display:inline-block;width:.6em;height:1em;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns a{font-family:var(--px);font-size:11px;text-decoration:none;color:var(--bg);background:var(--accent);padding:12px 14px;border:3px solid var(--line);box-shadow:4px 4px 0 var(--shadow)}
+.btns a.alt{background:var(--panel);color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:18px}
+.stat{border:3px dashed var(--dim);padding:10px;text-align:center}
+.stat b{display:block;font-family:var(--px);font-size:16px;color:var(--accent2);font-weight:400}
+.skills{display:grid;gap:14px;padding:14px 16px}
+.rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:6px 24px}
+.grp h4{font-family:var(--px);font-size:9px;font-weight:400;color:var(--accent2);margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--line);padding:0 0 0 8px;font-size:19px;line-height:1.5;background:var(--bg)}
+.chip b{font-family:var(--px);font-size:9px;font-weight:400;background:var(--accent);color:var(--bg);padding:5px 6px;line-height:1}
+.sk{display:flex;align-items:center;gap:8px}
+.sk .n{flex:0 1 auto}
+.bar{display:flex;gap:3px;flex:0 0 100px}
+.bar i{flex:1;height:12px;border:2px solid var(--line);background:transparent}
+.bar i.on{background:var(--accent)}
+.sk .lv{font-family:var(--px);font-size:9px;color:var(--dim);flex:0 0 38px;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;gap:10px;transition:transform .1s steps(2)}
+.card:hover{transform:translate(-3px,-3px)}
+.card h3{font-size:11px;color:var(--accent3)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span{font-size:18px;border:2px solid var(--accent2);color:var(--accent2);padding:0 6px}
+.badge{display:flex;gap:12px;align-items:flex-start}
+.badge .ic{flex:0 0 36px;height:36px;border:3px solid var(--line);display:grid;place-items:center;font-family:var(--px);font-size:12px;background:var(--accent);color:var(--bg)}
+.badge.lock .ic{background:var(--dim)}
+.badge small{display:block;color:var(--dim);font-size:19px}
+.contact{display:flex;gap:14px;flex-wrap:wrap}
+.contact a{font-family:var(--px);font-size:10px;color:var(--ink);text-decoration:none;border:3px solid var(--line);padding:10px 12px;background:var(--panel);box-shadow:4px 4px 0 var(--shadow)}
+.contact a:hover{background:var(--accent);color:var(--bg)}
+.tl{display:grid;gap:22px;border-left:4px solid var(--line);padding-left:20px;margin-left:8px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-34px;top:20px;width:14px;height:14px;background:var(--accent);border:3px solid var(--line)}
+.job h3{font-size:11px;color:var(--accent3)}
+.job .when{display:block;font-family:var(--px);font-size:9px;color:var(--accent2);margin:8px 0 10px}
+.job ul{margin:0;padding-left:20px}
+.rank{font-family:var(--px);font-size:9px;color:var(--accent2)}
+.pbar{display:block;height:12px;border:2px solid var(--line);margin-top:8px}
+.pbar i{display:block;height:100%;background:var(--accent)}
+.open{display:inline-block;margin-top:16px;font-family:var(--px);font-size:9px;line-height:1.6;border:3px solid var(--line);padding:8px 10px;background:var(--panel)}
+.open::before{content:"";display:inline-block;width:8px;height:8px;background:var(--accent);margin-right:8px;animation:blink 1s steps(1) infinite}
+footer{text-align:center;color:var(--dim);padding:40px 16px 28px}
+.p-H{fill:#f9cade}.p-h{fill:#eba6c3}.p-S{fill:#f3cba4}.p-E{fill:#4a4268}.p-L{fill:#ee94a8}.p-C{fill:#f7aeb4}.p-J{fill:#b6e8c6}.p-j{fill:#90ccaa}.p-T{fill:#fbd5e4}.p-P{fill:#d5c9f5}.p-B{fill:#f9cade}.p-b{fill:#d79bb5}.p-Y{fill:#fff0a0}
+@media (max-width:640px){.hero{grid-template-columns:1fr;justify-items:center;text-align:center}.hero svg{width:112px;height:161px}.btns{justify-content:center}.sk .n{font-size:19px}body{font-size:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top">[SEC_DEV]</a>
+  <a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#projects">PROJECTS</a><a href="#hackathons">HACKATHONS</a><a href="#skills">SKILLS</a><a href="#certs">CERTS</a><a href="#contact">CONTACT</a>
+  <button id="theme" aria-label="Toggle theme">LIGHT/DARK</button>
+</div></nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <svg id="shield" viewBox="0 0 16 23" shape-rendering="crispEdges" aria-hidden="true"></svg>
+    <div>
+      <h1>HI, I'M <span>MARSAL AL SHARJI</span><br>CYBERSECURITY STUDENT</h1>
+      <div class="term" id="term" aria-live="polite"></div>
+      <div class="btns"><a href="#projects">VIEW PROJECTS</a><a class="alt" href="#contact">PRESS START</a></div>
+      <div class="open">OPEN TO GRADUATE JOBS &amp; INTERNSHIPS</div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>ABOUT</h2>
+    <div class="box">
+      <p>Third-year cybersecurity student and aspiring red teamer. I break things (legally) to make systems stronger, with a technical edge in exploitation, networking and scripting.</p>
+      <div class="stats">
+        <div class="stat"><b>LVL 6</b>3rd year student</div>
+        <div class="stat"><b>25+</b>CTF rooms cleared</div>
+        <div class="stat"><b>1</b>Project built</div>
+        <div class="stat"><b>CPTS</b>Cert in progress</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>EXPERIENCE</h2>
+    <div class="tl">
+      <article class="box job"><h3>INFORMATION SECURITY INTERN // CIVIL AVIATION AUTHORITY (CAA), OMAN</h3><span class="when">JUN 2026 - AUG 2026</span><ul><li>Gained exposure to SOC operations: SIEM monitoring, alerts, incident handling and escalation.</li><li>Learned enterprise security tools such as EDR, NDR, DLP, IDS/IPS, firewalls, WAF and SOAR.</li><li>Studied application and infrastructure security: SAST/DAST, server hardening and high availability.</li><li>Learned GRC basics (ISO 27001, risk registers, data classification) and practiced VAPT report writing, policy development and awareness communications.</li></ul></article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>PROJECTS</h2>
+    <div class="grid">
+      <article class="box card"><h3>WEB PORT SCANNER</h3><span class="rank">FEB 2026</span><p>Developed a secure web app for network port scanning with Nmap integration. Designed a dashboard to launch scans and display open ports and detected services.</p><div class="tags"><span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Nmap</span></div></article>
+    </div>
+  </section>
+
+  <section id="hackathons">
+    <h2>HACKATHONS</h2>
+    <div class="grid">
+      <article class="box card"><h3>CTF HACKATHON // MANCHESTER MET UNIVERSITY</h3><span class="rank">12 NOV 2025</span><p>Solved challenges using Nmap, Metasploit, VirtualBox and Linux commands. Gained hands-on experience in vulnerability scanning, enumeration and basic exploitation, and strengthened problem-solving under time pressure.</p><div class="tags"><span>Nmap</span><span>Metasploit</span><span>VirtualBox</span><span>Linux</span></div></article>
+      <article class="box card"><h3>BRCAR-RISK // MEDTECH HACKATHON</h3><span class="rank">TOP 10 // 16 NOV 2025</span><p>Built a risk-prediction tool estimating 12-month breast cancer recurrence probability from clinical data, with a prototype web platform, automated follow-up alerts and factor-based risk explanations. Teamed up on the day and pitched the solution. Organised by Manchester MedTech Society and Scalpel Surgical Society.</p><div class="tags"><span>Web prototype</span><span>Risk prediction</span><span>Teamwork</span><span>Pitching</span></div></article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>SKILLS</h2>
+    <div class="box skills" id="skillbox"></div>
+  </section>
+
+  <section id="certs">
+    <h2>CERTIFICATES</h2>
+    <div class="grid">
+      <div class="box badge lock"><div class="ic">?</div><div>HTB CPTS (Certified Penetration Testing Specialist)<small>In progress: Hack The Box penetration testing path, 45%</small><span class="pbar"><i style="width:45%"></i></span></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>CONTINUE?</h2>
+    <div class="box">
+      <p>Open to graduate jobs, internships, mentorship and CTF teammates. Insert coin to start a conversation.</p>
+      <div class="contact">
+        <a href="mailto:marsalsharji@gmail.com">EMAIL</a>
+        <a href="https://github.com/meerr23" rel="noopener">GITHUB</a>
+        <a href="www.linkedin.com/in/marsal-al-sharji-698029330" rel="noopener">LINKEDIN</a>
+        <a href="https://profile.hackthebox.com/profile/01a12034-4541-737b-bf0e-3c0c1f11c334?utm_medium=copy_url" rel="noopener">HACKTHEBOX</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>&copy; 2026 MARSAL AL SHARJI </footer>
+
+<script>
+(function(){
+  // Pixel avatar: hijabi girl, oversized coat, wide-leg trousers, sneakers
+  var map=["......HHHH......","....HHHHHHHH....","...HHHHHHHHHH...","..HHHHhhhhHHHH..","..HHhSSSSSShHH..","..HHSSSSSSSSHH..","..HHSEESSEESHH..","..HHSCSSSSCSHH..","..HHSSSLLSSSHH..","..HHhSSSSSShHH..",".HHHHhSSSShHHHH.",".HHHHHhhhhHHHHH.","HHHHHHJTTJHHHHHH","JJJHHJjTTjJHHJJJ","JJJJJJjTYjJJJJJJ","SJJJJJjTTjJJJJJS","..JJJJjTTjJJJJ..","....PPPPPPPP....","....PPPPPPPP....","....PPP..PPP....","....PPP..PPP....","...BBBB..BBBB...","...bbbb..bbbb..."];
+  var h="";
+  map.forEach(function(r,y){for(var x=0;x<16;x++){var c=r[x];if(c!==".")h+='<rect class="p-'+c+'" x="'+x+'" y="'+y+'" width="1" height="1"/>';}});
+  document.getElementById("shield").innerHTML=h;
+
+  // Skills
+  var groups=[["OFFENSIVE",[["Penetration Testing",7],["Ethical Hacking",7],["Application Security",7],["Web Security",7],["Active Directory",6]]],["TECHNICAL",[["Networking",8],["Linux",8],["Python",7],["Java",8],["SQL &amp; Databases",6]]],["DEFENSE &amp; GOVERNANCE",[["Security Forensics",6],["Incident Response",7],["SOC / SIEM",6],["GRC",7],["Risk Management",7]]]];
+  document.getElementById("skillbox").innerHTML=groups.map(function(g){
+    return '<div class="grp"><h4>'+g[0]+'</h4><div class="rows">'+g[1].map(function(s){
+      var b="";for(var i=0;i<10;i++)b+='<i class="'+(i<s[1]?"on":"")+'"></i>';
+      return '<div class="sk"><span class="n">'+s[0]+'</span><div class="bar">'+b+'</div><span class="lv">'+s[1]+'/10</span></div>';
+    }).join("")+'</div></div>';
+  }).join("");
+
+  // Typing terminal
+  var lines=["$ whoami","marsal_al_sharji // cybersec student","$ goal --target","aspiring red teamer // breaking in, legally"];
+  var el=document.getElementById("term"),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var out="",li=0,ci=0;
+  function render(){el.innerHTML=out.replace(/\n/g,"<br>")+'<span class="cursor"></span>'}
+  function tick(){
+    if(li>=lines.length){render();return}
+    var l=lines[li];
+    if(ci<l.length){out+=l[ci++];render();setTimeout(tick,45)}
+    else{out+="\n";li++;ci=0;render();setTimeout(tick,350)}
+  }
+  if(reduce){out=lines.join("\n");render()}else tick();
+
+  // Theme toggle
+  var root=document.documentElement;
+  document.getElementById("theme").onclick=function(){
+    var dark=root.getAttribute("data-theme")?root.getAttribute("data-theme")==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme",dark?"light":"dark");
+  };
+
+  // Konami easter egg
+  var seq=[38,38,40,40,37,39,37,39,66,65],pos=0;
+  addEventListener("keydown",function(e){
+    pos=(e.keyCode===seq[pos])?pos+1:(e.keyCode===seq[0]?1:0);
+    if(pos===seq.length){pos=0;document.body.style.filter="hue-rotate(160deg)";setTimeout(function(){document.body.style.filter=""},2500)}
+  });
+})();
+</script>
+</body>
+</html>
